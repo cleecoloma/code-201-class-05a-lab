@@ -19,7 +19,7 @@ function sum(a, b) {
 }
 
 // Here is the test for sum(); uncomment it to run it
-testSum(4, 7);
+// testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -45,7 +45,7 @@ function multiply(a, b) {
 }
 
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5, 9);
+// testMultiply(5, 9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -63,17 +63,14 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) {//eslint-disable-line
   let sumAndMultiplyArray = [];
-  let sum = a + b + c;
-  let product = a * b * c;
-  sumAndMultiplyArray.push(sum);
-  sumAndMultiplyArray.push(product);
-  sumAndMultiplyArray.push(
-    a + " and " + b + " and " + c + " sum to " + sum + "."
-  );
-  sumAndMultiplyArray.push(
-    "The product of " + a + " and " + b + " and " + c + " is " + product + "."
-  );
-  console.log(sumAndMultiplyArray);
+  let sum1 = sum(a, b);
+  let newSum = sum(sum1[0], c);
+  let product1 = multiply(a, b)
+  let newProduct = multiply(product1[0], c);
+  sumAndMultiplyArray.push(newSum[0]);
+  sumAndMultiplyArray.push(newProduct[0]);
+  sumAndMultiplyArray.push(a + " and " + b + " and " + c + " sum to " + newSum[0] + ".");
+  sumAndMultiplyArray.push("The product of " + a + " and " + b + " and " + c + " is " + newProduct[0] + ".");
   return sumAndMultiplyArray;
 }
 
